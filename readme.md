@@ -42,19 +42,19 @@ Two methods of topic modeling are as follows:
     - label 1 : If paraphrases, 0 : O.W.
 
 ## tBert Architecture:
-![image](https://user-images.githubusercontent.com/19387425/190731090-27142cf8-e29c-44f2-843a-313e32a3985d.png)
+![image](https://user-images.githubusercontent.com/19387425/190731090-27142cf8-e29c-44f2-843a-313e32a3985d.png)</br>
 The Bert part has:
 - Input: Tokenized and combined two sentences
 - Output: only CLS part
-![image](https://user-images.githubusercontent.com/19387425/190736058-39454546-a007-4e1a-a8a6-b85720c985a3.png)
+![image](https://user-images.githubusercontent.com/19387425/190736058-39454546-a007-4e1a-a8a6-b85720c985a3.png)</br>
 The topic model part has:
 - Input: Tokenized sentence 1 and sentence 2
 - Two methods for topic modeling:
     - document and word topics
 - Uses LDA and GSDMM Topic modeling methods
-![image](https://user-images.githubusercontent.com/19387425/190737508-1fcba6c3-0b5b-45a3-877a-9901df341d84.png)
+![image](https://user-images.githubusercontent.com/19387425/190737508-1fcba6c3-0b5b-45a3-877a-9901df341d84.png)</br>
 The top layer combins topic vectors and C vector and Passes from two layer of MLP and Softmax.
-![image](https://user-images.githubusercontent.com/19387425/190738518-58fadc8e-a4da-4fca-9e87-482d5115f896.png)
+![image](https://user-images.githubusercontent.com/19387425/190738518-58fadc8e-a4da-4fca-9e87-482d5115f896.png)</br>
 
 ## Results:
 The following figure compares our results with that of the paper.
