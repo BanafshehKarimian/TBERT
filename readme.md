@@ -15,24 +15,23 @@ Bert has only the encoder part of the transformer and has the following features
   - masking some percentage of the input
   - predict if second sentence is next one
 
-
-### • GSDMM
-
-- Similar to LDA, is specifically aimed at detecting topics in smaller documents
-- assumes **only one topic per document.**
+## Topic models:
+Two methods of topic modeling are as follows:
+- GSDMM
+  - Assuming **only one topic per document**, it is Similar to LDA, and is specifically aimed at detecting topics in smaller documents
 - LDA
-- A Bayesian unsupervised learning
-- Generates topic based on word frequency
-- Mixtures of topics in a document
-- Starts from randomly assigning topics to each word of a document
-- Counts frequency of topics in a document c(Tj,Di)
-- Counts frequency of assigning each word to a topic c(wq,Tj)
-- Removes a words topic from document and updates counts
-- Multiplies c(Tj,Di) and c(wq,Tj) for each topic j
-- Assigns topic with max{c(Tj,Di)*c(wq,Tj)} to word wq
-- Repeats for all words in each pass
+  - A Bayesian unsupervised learning
+  - Generates topic based on word frequency
+  - Mixtures of topics in a document
+  - Starts from randomly assigning topics to each word of a document
+  - Counts frequency of topics in a document c(Tj,Di)
+  - Counts frequency of assigning each word to a topic c(wq,Tj)
+  - Removes a words topic from document and updates counts
+  - Multiplies c(Tj,Di) and c(wq,Tj) for each topic j
+  - Assigns topic with max{c(Tj,Di)*c(wq,Tj)} to word wq
+  - Repeats for all words in each pass
 
-# Topic models:
+
 
 
 - MSRP The Microsoft Research Paraphrase dataset (MSRP):
