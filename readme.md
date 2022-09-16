@@ -30,10 +30,7 @@ Two methods of topic modeling are as follows:
   - Multiplies c(Tj,Di) and c(wq,Tj) for each topic j
   - Assigns topic with max{c(Tj,Di)*c(wq,Tj)} to word wq
   - Repeats for all words in each pass
-
-
-
-
+## Datasets:
 - MSRP The Microsoft Research Paraphrase dataset (MSRP):
     - news websites sentences
     - Label 1 : same context, 0 : O.W.
@@ -44,135 +41,22 @@ Two methods of topic modeling are as follows:
     - two questions
     - label 1 : If paraphrases, 0 : O.W.
 
-# Datasets:
-
-
-# tBert Architecture:
-
-
-# tBert Architecture:
-
+## tBert Architecture:
+![image](https://user-images.githubusercontent.com/19387425/190730771-5d9cc45d-4203-414e-9429-57138f2a74b2.png)
+The Bert part has:
 - Input: Tokenized and combined two sentences
 - Output: only CLS part
-
-
-# tBert Architecture:
-
+![image](https://user-images.githubusercontent.com/19387425/190730882-e49d162c-9a86-4ccc-93d3-be32d2e83ff2.png)
+The topic model part has:
 - Input: Tokenized sentence 1 and sentence 2
 - Two methods for topic modeling:
     - document and word topics
 - Uses LDA and GSDMM Topic modeling methods
+![image](https://user-images.githubusercontent.com/19387425/190731090-27142cf8-e29c-44f2-843a-313e32a3985d.png)
 
+The top layer combins topic vectors and C vector and Passes from two layer of MLP and Softmax.
+![image](https://user-images.githubusercontent.com/19387425/190732970-401f4d2d-7304-42cc-b7a4-c3c206c304b8.png)
 
-```
-T 1 ... TN
-```
-```
-document
-```
-```
-Probability
-of topic 1
-```
-```
-... Probability
-of topic Z
-```
-# Document vs word topics:
-
-
-```
-T 1 ... TN
-```
-```
-word
-```
-```
-Probability
-of topic 1
-```
-```
-... Probability
-of topic Z
-```
-```
-... word
-```
-```
-Probability
-of topic 1
-```
-```
-... Probability
-of topic Z
-```
-..
-   .
-
-```
-Mean Probability
-of topic 1
-```
-```
-... Mean Probability
-of topic Z
-```
-# Document vs word topics:
-
-
-# tBert Architecture:
-
-- Input: combined topic vectors and C vector
-- Pass from two layer MLP
-- Softmax
-
-
-- Topic baselines
-    - calculate the JensenShannondivergence (JSD) between the topic distributions
-       of the two sentences.
-    - The model predicts a negative label if JSD is larger than a threshold
-- Siamese BiLSTM
-    - with pretrainedGloVeembeddings
-- Previous systems:
-    - Compared against three highest performing system of earlier work based on
-       F 1 score.
-- Bert
-    - C vector (as in tBERT) followed by a softmaxlayer
-
-# Baselines:
-
-
-# Results:
-
-```
-Topics improve performance
-```
-
-# Results:
-
-```
-They evaluate systems based on F 1 scores
-The early stopping is used during fine tuning
-```
-
-# Results:
-
-
-# Our Results:
-
-```
-Document converges faster
-```
-
-# Our Results:
-
-```
-Reached 75.2 and 75.
-```
-
-# Compare:
-
-```
-Test f 1 : 90 Test f 1 : 74 Test f 1 : 79
-```
-
+## Results:
+The following figure compares our results with that of the paper.
+![image](https://user-images.githubusercontent.com/19387425/190735021-0aa5f387-5ed9-4a92-b9aa-722f5a00696d.png)
