@@ -1,5 +1,6 @@
 # tBERT
 
+
 In this project we implement TBERT: Topic models and BERT joining forces for semantic similarity detectio. 
 Semantic similarity detection problem has applications ranging from question answering to plagiarism detection.
 ![image](https://user-images.githubusercontent.com/19387425/190729974-305d67f1-d58c-4926-b406-76d577fbd1bf.png)
